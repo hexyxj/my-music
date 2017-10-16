@@ -1,7 +1,7 @@
 <template>
   <div class="bs">
       <!-- //电台 -->
-      <p>电台</p>
+      <p>主播电台</p>
   </div>
 </template>
 <script>

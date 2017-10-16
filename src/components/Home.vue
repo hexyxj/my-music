@@ -3,18 +3,23 @@
     <div class="banner" @click="menuChange">
       <div class="flex-box">
         <div>
-          <router-link to="/music" class="menu-btn">音乐</router-link>
+          <router-link to="/recomend" class="menu-btn active">个性推荐</router-link>
         </div>
       </div>
       <div class="flex-box">
         <div>
-          <router-link to="/video" class="menu-btn">视频</router-link>
+          <router-link to="/music" class="menu-btn">歌单</router-link>
 
         </div>
       </div>
       <div class="flex-box">
         <div>
-          <router-link to="/bs" class="menu-btn">电台</router-link>
+          <router-link to="/bs" class="menu-btn">主播电台</router-link>
+        </div>
+      </div>
+      <div class="flex-box">
+        <div>
+          <router-link to="/rank" class="menu-btn">排行榜</router-link>
         </div>
       </div>
     </div>

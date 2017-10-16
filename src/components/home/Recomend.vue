@@ -1,7 +1,7 @@
 <template>
   <div class="video">
      <!--  //视频 -->
-     <p>视频</p>
+     <p>个性推荐</p>
   </div>
 </template>
 <script>

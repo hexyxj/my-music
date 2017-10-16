@@ -7,7 +7,9 @@ import FriendscCircle from '@/components/FriendsCircle'
 import Local from '@/components/Local'
 import Music from '@/components/home/Music'
 import BroadcastingStation from '@/components/home/BroadcastingStation'
-import Video from '@/components/home/Video'
+import Rank from '@/components/home/Rank'
+import Recomend from '@/components/home/Recomend'
+import Search from '@/components/Search' 
 
 Vue.use(Router)
 
@@ -24,7 +26,7 @@ export default new Router({
           children: [
             {
               path: '/',
-              component: Music
+              component: Recomend
             }
           ]
         }, {
@@ -34,7 +36,7 @@ export default new Router({
           children: [
             {
               path: '/',
-              component: Music
+              component: Recomend
             }, {
               path: '/music',
               name: 'music',
@@ -44,9 +46,13 @@ export default new Router({
               name: 'bs',
               component: BroadcastingStation
             }, {
-              path: '/video',
-              name: 'video',
-              component: Video
+              path: '/rank',
+              name: 'rank',
+              component: Rank
+            },{
+              path: '/recomend',
+              name: 'recomend',
+              component: Recomend
             }
           ]
         }, {
@@ -59,6 +65,10 @@ export default new Router({
           component: Local
         }
       ]
+    },{
+      path:"/search",
+      name:"search",
+      component:Search
     }
   ]
 })

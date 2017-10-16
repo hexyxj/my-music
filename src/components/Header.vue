@@ -7,7 +7,7 @@
           <router-link to="/home" class="home-btn"><i class="fa fa-home"></i></router-link>
           <router-link to="/friendscircle" class="fc-btn"><i class="fa fa-user-o"></i></router-link>
         </div>
-        <a href="#" class="right search-btn"><i class="fa fa-search"></i></a>
+        <router-link to="/search" class="right search-btn"><i class="fa fa-search"></i></router-link>
       </div>
       <router-view></router-view>
   </div>
