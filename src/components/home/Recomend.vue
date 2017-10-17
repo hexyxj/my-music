@@ -58,7 +58,7 @@ export default {
 
 }
 </script>
-<style lang="less">
+<style>
 .recomend {
   width: 100%;
   height: 100%;
