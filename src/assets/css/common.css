@@ -1,9 +1,19 @@
+ul,p,li,body{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+img{
+  vertical-align: bottom;
+}
+body{
+  background-color: #efefef
+}
 .clearfix::after {
   content: "";
   display: block;
   clear: both;
 }
-
 #app {
   width: 100%
 }

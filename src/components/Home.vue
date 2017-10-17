@@ -2,25 +2,24 @@
   <div class="home">
     <div class="banner" @click="menuChange">
       <div class="flex-box">
-        <div>
+       
           <router-link to="/recomend" class="menu-btn active">个性推荐</router-link>
-        </div>
+        
       </div>
       <div class="flex-box">
-        <div>
+        
           <router-link to="/music" class="menu-btn">歌单</router-link>
-
-        </div>
+       
       </div>
       <div class="flex-box">
-        <div>
+        
           <router-link to="/bs" class="menu-btn">主播电台</router-link>
-        </div>
+        
       </div>
       <div class="flex-box">
-        <div>
+        
           <router-link to="/rank" class="menu-btn">排行榜</router-link>
-        </div>
+        
       </div>
     </div>
     <router-view></router-view>
@@ -50,8 +49,6 @@ export default {
 .banner {
   border-bottom: 1px solid #ddd;
   display: flex;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 .flex-box {
@@ -59,17 +56,11 @@ export default {
   text-align: center;
 }
 
-.flex-box>div {
-  padding-left: 25%;
-  width: 50%;
-  height: 100%;
-}
-
 .flex-box a {
   box-sizing: border-box;
-  display: block;
+  display:block;
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none;
   color: #000;
   padding: 15px;
