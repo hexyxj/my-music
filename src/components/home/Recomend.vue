@@ -55,6 +55,62 @@
           <i class="fa fa-calendar"></i>
           <span>推荐歌单</span>
         </div>
+        <ul class="list-ul">
+          <li>
+            <img src="../../assets/img/recomend/1.jpg" alt=""/>
+              <div class="item-content">
+                 推荐歌单推荐歌单推荐歌单
+              </div>
+          </li>
+          <li>
+            <img src="../../assets/img/recomend/2.jpg" alt=""/>
+              <div class="item-content">
+                 推荐歌单推荐歌单推荐歌单
+              </div>
+          </li>
+          <li>
+            <img src="../../assets/img/recomend/3.jpg" alt=""/>
+              <div class="item-content">
+                 推荐歌单推荐歌单推荐歌单
+              </div>
+          </li>
+          <li>
+            <img src="../../assets/img/recomend/4.jpg" alt=""/>
+              <div class="item-content">
+                 推荐歌单推荐歌单推荐歌单
+              </div>
+          </li>
+          <li>
+            <img src="../../assets/img/recomend/5.jpg" alt=""/>
+              <div class="item-content">
+                 推荐歌单推荐歌单推荐歌单
+              </div>
+          </li>
+          <li>
+            <img src="../../assets/img/recomend/6.jpg" alt=""/>
+              <div class="item-content">
+                 推荐歌单推荐歌单推荐歌单
+              </div>
+          </li>
+          <li>
+            <img src="../../assets/img/recomend/7.jpg" alt=""/>
+              <div class="item-content">
+                 推荐歌单推荐歌单推荐歌单
+              </div>
+          </li>
+          <li>
+            <img src="../../assets/img/recomend/8.jpg" alt=""/>
+              <div class="item-content">
+                 推荐歌单推荐歌单推荐歌单
+              </div>
+          </li>
+          <li>
+            <img src="../../assets/img/recomend/9.jpg" alt=""/>
+              <div class="item-content">
+                 推荐歌单推荐歌单推荐歌单
+              </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -155,5 +211,18 @@ img {
 .list-header>span{
   font-size: 16px;
   color: #000;
+}
+.list-ul{
+  
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.list-ul li{
+  padding-top:15px; 
+  width: 30%;
+}
+.list-ul li div.item-content{
+  padding-top: 10px;
 }
 </style>
