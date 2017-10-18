@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import HelloWorld from '@/components/HelloWorld'
+import VueResource from 'vue-resource'
 import Header from '@/components/Header'
 import Home from '@/components/Home'
 import FriendscCircle from '@/components/FriendsCircle'
@@ -12,7 +12,7 @@ import Recomend from '@/components/home/Recomend'
 import Search from '@/components/Search' 
 
 Vue.use(Router)
-
+Vue.use(VueResource)
 export default new Router({
   routes: [
     {

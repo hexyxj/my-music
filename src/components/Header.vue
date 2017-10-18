@@ -1,7 +1,7 @@
 <template>
   <div class="index">
       <div class="header">
-        <a href="#" class="left menu-btn"><i class="fa fa-bars"></i></a>
+        <a href="#" class="left menu-btn"><i class="fa fa-navicon"></i></a>
         <div class="middle">
           <router-link to="/local" class="local-btn"><i class="fa fa-music"></i></router-link>
           <router-link to="/home" class="home-btn"><i class="fa fa-home"></i></router-link>

@@ -5,7 +5,7 @@
       <div class="slider">
         <ul class="slider-img clearfix">
           <li>
-            <a href="#"><img src="../../assets/img/1.png" alt=""></a>
+            <a href="#"><img src="../../assets/img/2.png" alt=""></a>
           </li>
           <li>
             <a href="#"><img src="../../assets/img/2.png" alt=""></a>
@@ -27,27 +27,33 @@
       <div class="cards">
         <div class="card-item">
           <div class="card-btn">
-
+            <i class="fa fa-address-card"></i>
           </div>
           <p class="card-title">私人FM</p>
         </div>
         <div class="card-item">
           <div class="card-btn">
-
+            <i class="fa fa-calendar-check-o"></i>
           </div>
           <p class="card-title">每日推荐</p>
         </div>
         <div class="card-item">
           <div class="card-btn">
-
+            <i class="fa fa-server"></i>
           </div>
           <p class="card-title">歌单</p>
         </div>
         <div class="card-item">
           <div class="card-btn">
-
+            <i class="fa fa-bar-chart-o"></i>
           </div>
           <p class="card-title">排行榜</p>
+        </div>
+      </div>
+      <div class="music-list">
+        <div class="list-header">
+          <i class="fa fa-calendar"></i>
+          <span>推荐歌单</span>
         </div>
       </div>
     </div>
@@ -58,7 +64,7 @@ export default {
 
 }
 </script>
-<style>
+<style scoped>
 .recomend {
   width: 100%;
   height: 100%;
@@ -100,5 +106,54 @@ export default {
 
 img {
   width: 100%;
+}
+
+.cards {
+  display: flex;
+  padding: 20px 5%;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-item {
+  text-align: center;
+  width: 20%;
+}
+
+.card-btn {
+  display: inline-block;
+  text-align: center;
+  line-height: 60px;
+  width: 60px;
+  height: 60px;
+  border-radius: 36px;
+  border: 1px solid #E72101;
+  padding: 5px;
+  font-size: 32px;
+}
+
+.card-btn i {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #E72101;
+}
+
+.card-title {
+  color: #E72101;
+  padding-top: 5px;
+}
+
+.list-header {
+  padding-top:10px; 
+  color: #E72101;
+  padding-left: 10px;
+  font-size: 20px;
+}
+.list-header>span{
+  font-size: 16px;
+  color: #000;
 }
 </style>
