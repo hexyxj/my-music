@@ -2,14 +2,16 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import VueResource from 'vue-resource'
 import Header from '@/components/Header'
-import Home from '@/components/Home'
-import FriendscCircle from '@/components/FriendsCircle'
-import Local from '@/components/Local'
+import Home from '@/components/header/Home'
+import FriendscCircle from '@/components/header/FriendsCircle'
+import Local from '@/components/header/Local'
 import Music from '@/components/home/Music'
 import BroadcastingStation from '@/components/home/BroadcastingStation'
-import Rank from '@/components/home/Rank'
-import Recomend from '@/components/home/Recomend'
+// import Rank from '@/components/home/Rank'
+import Video from '@/components/home/Video'
 import Search from '@/components/Search' 
+import MusicList from '@/components/MusicList'
+
 
 Vue.use(Router)
 Vue.use(VueResource)
@@ -26,7 +28,7 @@ export default new Router({
           children: [
             {
               path: '/',
-              component: Recomend
+              component: Music
             }
           ]
         }, {
@@ -36,7 +38,7 @@ export default new Router({
           children: [
             {
               path: '/',
-              component: Recomend
+              component: Music
             }, {
               path: '/music',
               name: 'music',
@@ -45,14 +47,10 @@ export default new Router({
               path: '/bs',
               name: 'bs',
               component: BroadcastingStation
-            }, {
-              path: '/rank',
-              name: 'rank',
-              component: Rank
             },{
-              path: '/recomend',
-              name: 'recomend',
-              component: Recomend
+              path: '/video',
+              name: 'video',
+              component: Video
             }
           ]
         }, {
@@ -66,9 +64,13 @@ export default new Router({
         }
       ]
     },{
-      path:"/search",
-      name:"search",
+      path:'/search',
+      name:'search',
       component:Search
+    },{
+      path:'/musiclist',
+      name:'musiclist',
+      component:MusicList
     }
   ]
 })
