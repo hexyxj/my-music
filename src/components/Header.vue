@@ -14,36 +14,34 @@
 </template>
 
 <script>
-    export default{
-
-    }
+export default {};
 </script>
-<style scoped>
-.header{
+<style scoped lang="less">
+@import "../assets/css/variable.less";
+.header {
   display: flex;
   padding: 20px;
-  background-color:#E72101;
- 
-}
-i{
- font-size:36px;
-  color:#fff;
-}
-.left{
-  flex: 1;
-}
-.middle{
-  padding-left:30px; 
-  padding-right: 30px;
-  display: flex;
-  flex: 3;
-  text-align: center;
-}
-.middle>a{
-  flex: 1;
-}
-.right{
-  flex: 1;
-  text-align: right;
+  background-color: @themeColor;
+  i {
+    font-size: 36px;
+    color: #fff;
+  }
+  .left {
+    flex: 1;
+  }
+  .middle {
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    flex: 3;
+    text-align: center;
+  }
+  .middle > a {
+    flex: 1;
+  }
+  .right {
+    flex: 1;
+    text-align: right;
+  }
 }
 </style>

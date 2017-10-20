@@ -26,39 +26,37 @@ export default {
   methods: {
     menuChange(el) {
       console.log(el.target);
-        var historyActive = document.querySelector(".banner .active");
-        if (historyActive) {
-          historyActive.classList.remove("active");
-        }
-        el.target.classList.add("active");
+      var historyActive = document.querySelector(".banner .active");
+      if (historyActive) {
+        historyActive.classList.remove("active");
+      }
+      el.target.classList.add("active");
     }
   }
 };
 </script>
 
-<style scroped>
+<style scroped lang="less">
+@import "../../assets/css/variable.less";
 .banner {
   border-bottom: 1px solid #ddd;
   display: flex;
 }
-
 .flex-box {
   flex: 1;
   text-align: center;
-}
-
-.flex-box a {
-  box-sizing: border-box;
-  display: block;
-  text-align: center;
-  font-size: 18px;
-  text-decoration: none;
-  color: #000;
-  padding: 15px;
-}
-
-.flex-box a.active {
-  border-bottom: 4px solid #e72101;
-  color: #e72101;
+  a {
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+    padding: 15px;
+  }
+  a.active {
+    border-bottom: 4px solid @themeColor;
+    color: @themeColor;
+  }
 }
 </style>

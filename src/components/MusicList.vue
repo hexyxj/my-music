@@ -42,6 +42,23 @@
             </div>
         </div>
     </div>
+    <div class="song-title">
+        <div class="icon">
+            <i class="fa fa-play-circle-o"></i><span>播放全部<small>(共40首)</small></span>
+        </div>
+    </div>
+    <ul class="song-list">
+        <li>
+            <div class="number">99</div>
+            <div class="songdetail">
+                <p class="songname">放你在心里</p>
+                <p class="singer">许美静 - 都是夜归人</p>
+            </div>
+            <div class="moremenu">
+               <i class="fa fa-ellipsis-v"></i>
+            </div>
+        </li>
+    </ul>
 </div>
 </template>
 <script>
@@ -54,62 +71,111 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="less">
+@contentBGColor: #76797c;
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color:transparent;
-  color: white;
+  background-color: transparent;
+  color: #fff;
   height: 60px;
   line-height: 60px;
+  .navbar-item-left {
+    float: left;
+  }
+  .navbar-item-right {
+    float: right;
+  }
+  .goback {
+    font-size: 40px;
+    line-height: 55px;
+    padding: 0 20px;
+    vertical-align: middle;
+  }
+  .search,
+  .list-menu {
+    font-size: 26px;
+    padding-right: 20px;
+    color: white;
+  }
 }
-.navbar > .navbar-item-left {
-  float: left;
-}
-.navbar > .navbar-item-right {
-  float: right;
-}
-.navbar > .goback {
-  font-size: 40px;
-  line-height: 55px;
-  padding: 0 20px;
-  vertical-align: middle;
-}
-.navbar > .search,
-.navbar > .list-menu {
-  font-size: 26px;
-  padding-right: 20px;
-  color: white;
-}
-
-
 .content {
   padding: 60px 15px 15px;
   color: white;
-  background-color: #76797C;
-}
-
-.content .cover{
+  background-color: @contentBGColor;
+  .cover {
     display: flex;
     flex-wrap: nowrap;
+  }
+  .descr {
+    padding-left: 15px;
+    .title {
+      padding-top: 15px;
+      font-size: 20px;
+    }
+    .author {
+      padding-top: 20px;
+      font-size: 14px;
+    }
+  }
+  .handle {
+    padding-top: 20px;
+    display: flex;
+    .handle-item {
+      width: 25%;
+      text-align: center;
+      font-size: 28px;
+      p {
+        font-size: 14px;
+        padding-top: 10px;
+      }
+    }
+  }
 }
-.content .descr{
-padding-left: 15px;
+.song-title {
+  font-size: 26px;
+  line-height: 26px;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  span {
+    padding-left: 20px;
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 16px;
+    height: 26px;
+  }
 }
-.content .handle {
-  padding-top: 20px;
-  display: flex;
-}
-.content .handle-item {
-  width: 25%;
-  text-align: center;
-  font-size: 28px;
-}
-.content .handle-item p {
-  font-size: 16px;
-  padding-top: 10px;
+.song-list {
+  li {
+    height: 60px;
+    display: flex;
+  }
+  .number {
+    width: 50px;
+    line-height: 60px;
+    text-align: center;
+  }
+  .songdetail {
+    flex: 1;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .singer {
+      font-size: 12px;
+      color: #76797c;
+    }
+  }
+  .moremenu {
+    color: #76797c;
+    width: 50px;
+    line-height: 60px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
 }
 </style>
 

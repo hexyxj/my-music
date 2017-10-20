@@ -116,11 +116,10 @@
   </div>
 </template>
 <script>
-export default {
-
-}
+export default {};
 </script>
-<style scoped>
+<style scoped lang="less">
+@import "../../assets/css/variable.less";
 .recomend {
   width: 100%;
   height: 100%;
@@ -183,46 +182,44 @@ img {
   width: 60px;
   height: 60px;
   border-radius: 36px;
-  border: 1px solid #E72101;
+  border: 1px solid @themeColor;
   padding: 5px;
   font-size: 32px;
-}
-
-.card-btn i {
-  display: inline-block;
-  height: 40px;
-  width: 40px;
-  line-height: 40px;
-  text-align: center;
-  color: #E72101;
+  i {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: @themeColor;
+  }
 }
 
 .card-title {
-  color: #E72101;
+  color: @themeColor;
   padding-top: 5px;
 }
 
 .list-header {
-  padding-top:10px; 
-  color: #E72101;
+  padding-top: 10px;
+  color: @themeColor;
   padding-left: 10px;
   font-size: 20px;
+  > span {
+    font-size: 16px;
+    color: #000;
+  }
 }
-.list-header>span{
-  font-size: 16px;
-  color: #000;
-}
-.list-ul{
-  
+.list-ul {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-}
-.list-ul li{
-  padding-top:15px; 
-  width: 30%;
-}
-.list-ul li div.item-content{
-  padding-top: 10px;
+  li {
+    padding-top: 15px;
+    width: 30%;
+    div.item-content {
+      padding-top: 10px;
+    }
+  }
 }
 </style>
