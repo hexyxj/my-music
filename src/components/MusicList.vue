@@ -14,8 +14,14 @@
         </router-link>
     </div>
     <div class="content">
-        <div>
-            <img src="../assets/img/recomend/3.jpg" alt="">
+        <div class="cover">
+            <div class="cover-item">
+                <img src="../assets/img/recomend/3.jpg" alt="">
+            </div>
+            <div class="cover-item descr">
+                <p class="title">雨声集|你的快乐来自每场雨</p>
+                <p class="author">不在扎马尾</p>
+            </div>
         </div>
         <div class="handle">
             <div class="handle-item">
@@ -54,8 +60,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #000;
-  opacity: 0.3;
+  background-color:transparent;
   color: white;
   height: 60px;
   line-height: 60px;
@@ -78,19 +83,33 @@ export default {
   padding-right: 20px;
   color: white;
 }
-.content .handle{
-    padding-top:20px; 
-    display: flex;
-}
-.content .handle-item{
-    width: 25%;
-    text-align: center;
-    font-size: 28px;
-}
-.content .handle-item p{
-    font-size:16px; 
-    padding-top:20px; 
+
+
+.content {
+  padding: 60px 15px 15px;
+  color: white;
+  background-color: #76797C;
 }
 
+.content .cover{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.content .descr{
+padding-left: 15px;
+}
+.content .handle {
+  padding-top: 20px;
+  display: flex;
+}
+.content .handle-item {
+  width: 25%;
+  text-align: center;
+  font-size: 28px;
+}
+.content .handle-item p {
+  font-size: 16px;
+  padding-top: 10px;
+}
 </style>
 
