@@ -12,6 +12,8 @@ import Video from '@/components/home/Video'
 import Search from '@/components/Search' 
 import MusicList from '@/components/MusicList'
 
+import Player from '@/components/Player'
+
 
 Vue.use(Router)
 Vue.use(VueResource)
@@ -71,6 +73,9 @@ export default new Router({
       path:'/musiclist',
       name:'musiclist',
       component:MusicList
+    },{
+      path:'/player',
+      component:Player
     }
   ]
 })

@@ -11,6 +11,7 @@ module.exports = {
     extract: isProduction
   }),
   transformToRequire: {
+    audio: 'src', // 音频 
     video: 'src',
     source: 'src',
     img: 'src',
