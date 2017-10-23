@@ -28,10 +28,10 @@ export default {
     };
   },
   mounted: function() {
-      var songCtrl = document.getElementById("musictrl");
-      songCtrl.oncanplay=()=>{
-          this.startProgressBar();
-      }
+    var songCtrl = document.getElementById("musictrl");
+    songCtrl.oncanplay = () => {
+      this.startProgressBar();
+    };
   },
   methods: {
     playOrPause(el) {
@@ -51,8 +51,8 @@ export default {
       var totalTime = songCtrl.duration;
       var timer = setInterval(() => {
         var currentTime = songCtrl.currentTime;
-       
-        that.currentWidth = parseInt(currentTime / totalTime * 100)+"%";
+
+        that.currentWidth = parseInt(currentTime / totalTime * 100) + "%";
         // console.log(that.currentWidth);
         if (currentTime >= totalTime || songCtrl.paused) {
           clearInterval(timer);
@@ -63,6 +63,7 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+@import "../assets/css/variable.less";
 .player {
   width: 100%;
   position: fixed;
@@ -96,27 +97,27 @@ export default {
     min-width: 60px;
     img {
       vertical-align: middle;
-      position: absolute;
-      top: 50%;
-      margin-top: -30px;
+    //   position: absolute;
+    //   top: 50%;
+    //   margin-top: -30px;
     }
   }
   .song-descr {
     flex: 1;
     padding-left: 10px;
     padding-left: 10px;
-    font-size: 1.5rem;
+    font-size: @fontSizeXXL;
     > p {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
     > p.singer {
-      font-size: 1.125rem;
+      font-size: @fontSizeM;
     }
   }
   .song-ctrl {
-    min-width: 48px;
+    min-width: 96px;
   }
 }
 </style>

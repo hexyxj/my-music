@@ -6,8 +6,9 @@ import router from './router'
 import '@/assets/css/normalize.css'
 import '@/assets/css/common.css'
 import '@/assets/css/font-awesome.css'
+import 'lib-flexible/flexible.js';
 Vue.config.productionTip = false
- 
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

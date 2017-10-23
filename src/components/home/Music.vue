@@ -173,6 +173,9 @@ img {
 .card-item {
   text-align: center;
   width: 20%;
+  p {
+    font-size: @fontSizeXS;
+  }
 }
 
 .card-btn {
@@ -182,9 +185,9 @@ img {
   width: 60px;
   height: 60px;
   border-radius: 36px;
-  border: 1px solid @themeColor;
+  border: 2px solid @themeColor;
   padding: 5px;
-  font-size: 32px;
+  font-size: @fontSizeM;
   i {
     display: inline-block;
     height: 40px;
@@ -204,9 +207,9 @@ img {
   padding-top: 10px;
   color: @themeColor;
   padding-left: 10px;
-  font-size: 20px;
+  font-size: @fontSizeS;
   > span {
-    font-size: 16px;
+    font-size: 24px;
     color: #000;
   }
 }
@@ -218,6 +221,7 @@ img {
     padding-top: 15px;
     width: 30%;
     div.item-content {
+      font-size: @fontSizeXS;
       padding-top: 10px;
     }
   }

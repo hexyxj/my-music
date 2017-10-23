@@ -23,7 +23,7 @@ export default {};
   padding: 20px;
   background-color: @themeColor;
   i {
-    font-size: 36px;
+    font-size: @fontSizeL;
     color: #fff;
   }
   .left {

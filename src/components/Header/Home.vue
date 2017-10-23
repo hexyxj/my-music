@@ -49,7 +49,7 @@ export default {
     box-sizing: border-box;
     display: block;
     text-align: center;
-    font-size: 18px;
+    font-size: @fontSizeS;
     text-decoration: none;
     color: #000;
     padding: 15px;

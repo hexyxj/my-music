@@ -72,6 +72,7 @@ export default {
 </script>
 
 <style scoped lang="less">
+@import url(../assets/css/variable.less);
 @contentBGColor: #76797c;
 .navbar {
   position: fixed;
@@ -89,14 +90,14 @@ export default {
     float: right;
   }
   .goback {
-    font-size: 40px;
+    font-size: @fontSizeXL;
     line-height: 55px;
     padding: 0 20px;
     vertical-align: middle;
   }
   .search,
   .list-menu {
-    font-size: 26px;
+    font-size: @fontSizeS;
     padding-right: 20px;
     color: white;
   }
@@ -113,7 +114,7 @@ export default {
     padding-left: 15px;
     .title {
       padding-top: 15px;
-      font-size: 20px;
+      font-size: @fontSizeM;
     }
     .author {
       padding-top: 20px;
@@ -126,35 +127,35 @@ export default {
     .handle-item {
       width: 25%;
       text-align: center;
-      font-size: 28px;
+      font-size: @fontSizeL;
       p {
-        font-size: 14px;
+        font-size: @fontSizeXS;
         padding-top: 10px;
       }
     }
   }
 }
 .song-title {
-  font-size: 26px;
-  line-height: 26px;
+  font-size: @fontSizeL;
+  line-height: 32px;
   padding: 10px 15px;
   border: 1px solid #ddd;
   span {
     padding-left: 20px;
     display: inline-block;
     vertical-align: bottom;
-    font-size: 16px;
-    height: 26px;
+    font-size: @fontSizeS;
+    height: 32px;
   }
 }
 .song-list {
   li {
-    height: 60px;
+    height: 80px;
     display: flex;
   }
   .number {
-    width: 50px;
-    line-height: 60px;
+    width: 60px;
+    line-height: 80px;
     text-align: center;
   }
   .songdetail {
@@ -164,8 +165,9 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    font-size: @fontSizeM;
     .singer {
-      font-size: 12px;
+      font-size: 24px;
       color: #76797c;
     }
   }
