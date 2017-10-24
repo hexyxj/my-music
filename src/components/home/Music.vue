@@ -118,6 +118,7 @@
 </template>
 <script>
 import Vue from 'vue'
+import axios from 'axios'
 import mySwiper from '../Swiper.vue'
 Vue.component('my-swiper', mySwiper);
 export default {
@@ -127,12 +128,16 @@ export default {
     }
   },
   mounted:function(){
-    this.swiperList=[
+    axios.get("static/data/swiper.json").then(response=>{
+      console.log(response);
+      this.swiperList=response.data;
+    })
+     /*  this.swiperList=[
       {imgHref:"#",imgUrl:"static/img/1.png"},
       {imgHref:"#",imgUrl:"static/img/2.png"},
       {imgHref:"#",imgUrl:"static/img/3.png"},
       {imgHref:"#",imgUrl:"static/img/4.png"},
-      ];
+      ]; */
   }
 
 };

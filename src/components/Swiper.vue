@@ -10,7 +10,7 @@
 export default {
   props:["swiperlist"],
   mounted:function(){
-    console.log(this.swiperlist);
+    // console.log(this.swiperlist);
   }
   
 }
