@@ -13,7 +13,7 @@ import Search from '@/components/Search'
 import MusicList from '@/components/MusicList'
 
 import Player from '@/components/Player'
-
+import Swiper from '@/components/Swiper'
 
 Vue.use(Router)
 Vue.use(VueResource)
@@ -76,6 +76,9 @@ export default new Router({
     },{
       path:'/player',
       component:Player
+    },{
+      path:"/swiper",
+      component:Swiper
     }
   ]
 })

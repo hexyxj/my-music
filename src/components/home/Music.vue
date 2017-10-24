@@ -3,7 +3,8 @@
     <!-- <p>个性推荐</p> -->
     <div class="r-container">
       <div class="slider">
-        <ul class="slider-img clearfix">
+        <my-swiper :swiperlist="swiperList"></my-swiper>
+        <!-- <ul class="slider-img clearfix">
           <li>
             <a href="#"><img src="../../assets/img/2.png" alt=""></a>
           </li>
@@ -22,7 +23,7 @@
           <li></li>
           <li></li>
           <li></li>
-        </ul>
+        </ul> -->
       </div>
       <div class="cards">
         <div class="card-item">
@@ -116,7 +117,25 @@
   </div>
 </template>
 <script>
-export default {};
+import Vue from 'vue'
+import mySwiper from '../Swiper.vue'
+Vue.component('my-swiper', mySwiper);
+export default {
+  data:function(){
+    return{
+      swiperList:[]
+    }
+  },
+  mounted:function(){
+    this.swiperList=[
+      {imgHref:"#",imgUrl:"static/img/1.png"},
+      {imgHref:"#",imgUrl:"static/img/2.png"},
+      {imgHref:"#",imgUrl:"static/img/3.png"},
+      {imgHref:"#",imgUrl:"static/img/4.png"},
+      ];
+  }
+
+};
 </script>
 <style scoped lang="less">
 @import "../../assets/css/variable.less";
