@@ -138,12 +138,16 @@ export default {
   },
   mounted:function(){
     axios.get("static/data/swiper.json").then(response=>{
-      console.log(response);
+      // console.log(response);
       this.swiperList=response.data;
+    }).catch(error=>{
+      console.log(error);
     });
     axios.get("static/data/recomendList.json").then(response=>{
-      console.log(response);
+      // console.log(response);
       this.recomendList=response.data;
+    }).catch(error=>{
+      console.log(error);
     })
      /*  this.swiperList=[
       {imgHref:"#",imgUrl:"static/img/1.png"},
@@ -154,7 +158,7 @@ export default {
   },
   methods:{
     jumpToMusicList:function(listId){
-      console.log(listId);
+      // console.log(listId);
       this.$router.push("/musiclist")
     }
   }

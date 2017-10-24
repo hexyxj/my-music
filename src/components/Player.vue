@@ -1,16 +1,16 @@
 <template>
-    <div class="player">
-        <audio src="http://fs.w.kugou.com/201710240921/f053507dc50dce1e76d2cd7867a1e505/G107/M09/01/15/S5QEAFnbnjWAM8fQAEPd1VgZ8Bo529.mp3" autoplay id="musictrl" preload="auto"></audio>
+    <div class="player" v-if="message && music">
+        <audio :src="music.songUrl" autoplay id="musictrl" preload="auto"></audio>
         <div class="progress-bar">
             <div class="current-time" :style="{width:currentWidth}"></div>
         </div>
         <div class="player-cover">
             <div class="player-img">
-                <img src="../assets/img/music_avatar.jpg" alt="">
+                <img :src="music.imgUrl" alt="">
             </div>
             <div class="song-descr">
-                <p class="song-name">祝你幸福</p>
-                <p class="singer">李荣浩 - 祝你幸福</p>
+                <p class="song-name">{{music.name}}</p>
+                <p class="singer">{{music.songer}}</p>
             </div>
             <div class="song-ctrl ctrl-play" @click="playOrPause">
                 <!-- <img src="../assets/img/button/start.png" alt="" class="song-pause" > -->
@@ -22,20 +22,38 @@
 <script>
 import Image from "../assets/img/button/start.png";
 export default {
+  props:["message"],
   data: function() {
     return {
-      currentWidth: "2px"
+      currentWidth: "2px",
+      music:null
     };
   },
   mounted: function() {
+    
     var songCtrl = document.getElementById("musictrl");
-    songCtrl.oncanplay = () => {
-      this.startProgressBar();
-    };
+    if(songCtrl){
+      songCtrl.oncanplay = () => {
+        this.startProgressBar();
+      };
+    }
+  },
+  updated:function(){
+    this.music=this.message;
+    // console.log(this.message);
+  },
+  watch:{ 
+    music:function(){
+      // console.log(this.music);
+    }
+
   },
   methods: {
     playOrPause(el) {
       var songCtrl = document.getElementById("musictrl");
+      if(!songCtrl){
+        return;
+      }
       if (songCtrl.paused) {
         songCtrl.play();
         el.target.classList = "song-ctrl ctrl-play";
@@ -97,6 +115,8 @@ export default {
     min-width: 60px;
     img {
       vertical-align: middle;
+      width: 120px;
+      height: 120px;
     //   position: absolute;
     //   top: 50%;
     //   margin-top: -30px;
@@ -106,14 +126,15 @@ export default {
     flex: 1;
     padding-left: 10px;
     padding-left: 10px;
-    font-size: @fontSizeXXL;
+    font-size: @fontSizeL;
     > p {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
     > p.singer {
-      font-size: @fontSizeM;
+      font-size: @fontSizeXS;
+      padding-top: 10px;
     }
   }
   .song-ctrl {

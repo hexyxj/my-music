@@ -16,56 +16,99 @@
     <div class="content">
         <div class="cover">
             <div class="cover-item">
-                <img src="../assets/img/recomend/3.jpg" alt="">
+                <img :src="musicListImg" alt="">
             </div>
             <div class="cover-item descr">
-                <p class="title">雨声集|你的快乐来自每场雨</p>
-                <p class="author">不在扎马尾</p>
+                <p class="title">{{musicListName}}</p>
+                <p class="author">{{author}}</p>
             </div>
         </div>
         <div class="handle">
             <div class="handle-item">
                 <i class="fa fa-folder-o"></i>
-                <p>123万</p>
+                <p>{{collect}}</p>
             </div>
             <div class="handle-item">
                 <i class="fa fa-commenting-o"></i>
-                <p>123万</p>
+                <p>{{message}}</p>
             </div>
             <div class="handle-item">
                 <i class="fa fa-share-alt" aria-hidden="true"></i>
-                <p>123万</p>
+                <p>{{share}}</p>
             </div>
             <div class="handle-item">
                 <i class="fa fa-download" aria-hidden="true"></i>
-                <p>123万</p>
+                <p>{{download}}</p>
             </div>
         </div>
     </div>
     <div class="song-title">
         <div class="icon">
-            <i class="fa fa-play-circle-o"></i><span>播放全部<small>(共40首)</small></span>
+            <i class="fa fa-play-circle-o"></i><span>播放全部<small>{{'(共'+musicList.length+'首)'}}</small></span>
         </div>
     </div>
     <ul class="song-list">
-        <li>
-            <div class="number">99</div>
+        <li v-for="(tmp,index) in musicList" :key="index" @click="playMusic(tmp)">
+            <div class="number">{{index+1}}</div>
             <div class="songdetail">
-                <p class="songname">放你在心里</p>
-                <p class="singer">许美静 - 都是夜归人</p>
+                <p class="songname">{{tmp.name}}</p>
+                <p class="singer">{{tmp.songer}}</p>
             </div>
             <div class="moremenu">
                <i class="fa fa-ellipsis-v"></i>
             </div>
         </li>
     </ul>
+    <my-player :message="playSong"></my-player>
 </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
+  data:function(){
+    return {
+      musicList:[],
+      share:0,
+      collect:0,
+      message:0,
+      download:0,
+      musicListName:"",
+      author:"",
+      musicListImg:"",
+      playSong:null
+    }
+  },
+  mounted:function(){
+    console.log("musicList")
+    axios.get("static/data/musicList.json").then(response=>{
+      this.musicList=response.data.dataList;
+      this.share=response.data.share;
+      this.collect=response.data.collect;
+      this.message=response.data.message;
+      this.download=response.data.download;
+      this.musicListName=response.data.musicListName;
+      this.author=response.data.author;
+      this.musicListImg=response.data.musicListImg
+      if(this.share>100000){
+        this.share=Math.round(this.share/10000)+"万";
+      }
+      if(this.collect>100000){
+        this.collect=Math.round(this.collect/10000)+"万";
+      }
+      if(this.message>100000){
+        this.message=Math.round(this.message/10000)+"万";
+      }
+      if(this.download>100000){
+        this.download=Math.round(this.download/10000)+"万";
+      }
+    })
+  },
   methods: {
-    goBack() {
+    goBack:function() {
       history.go(-1);
+    },
+    playMusic:function(tmp){
+      this.playSong=tmp;
     }
   }
 };
@@ -81,8 +124,9 @@ export default {
   width: 100%;
   background-color: transparent;
   color: #fff;
-  height: 60px;
-  line-height: 60px;
+  height: 80px;
+  line-height: 80px;
+  font-size: @fontSizeM;
   .navbar-item-left {
     float: left;
   }
@@ -91,7 +135,7 @@ export default {
   }
   .goback {
     font-size: @fontSizeXL;
-    line-height: 55px;
+    line-height: 75px;
     padding: 0 20px;
     vertical-align: middle;
   }
@@ -103,12 +147,15 @@ export default {
   }
 }
 .content {
-  padding: 60px 15px 15px;
+  padding: 80px 15px 15px;
   color: white;
   background-color: @contentBGColor;
   .cover {
     display: flex;
     flex-wrap: nowrap;
+  }
+  .cover-item>img{
+    width: 300px;
   }
   .descr {
     padding-left: 15px;
@@ -149,13 +196,14 @@ export default {
   }
 }
 .song-list {
+  padding-bottom:160px; 
   li {
-    height: 80px;
+    height: 100px;
     display: flex;
   }
   .number {
     width: 60px;
-    line-height: 80px;
+    line-height: 100px;
     text-align: center;
   }
   .songdetail {
@@ -174,7 +222,7 @@ export default {
   .moremenu {
     color: #76797c;
     width: 50px;
-    line-height: 60px;
+    line-height: 100px;
     text-align: center;
     border-bottom: 1px solid #ddd;
   }
