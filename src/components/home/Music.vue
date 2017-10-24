@@ -57,12 +57,19 @@
           <span>推荐歌单</span>
         </div>
         <ul class="list-ul">
-          <li>
+          <li v-for="(tmp,index) in recomendList" :key="index" @click="jumpToMusicList(tmp.id)">
+            <img :src="tmp.imgUrl" alt=""/>
+              <div class="item-content">
+                {{tmp.descr}}
+              </div>
+          </li>
+          <!-- 
+            <li>
             <img src="../../assets/img/recomend/1.jpg" alt=""/>
               <div class="item-content">
                  推荐歌单推荐歌单推荐歌单
               </div>
-          </li>
+          </li> 
           <li>
             <img src="../../assets/img/recomend/2.jpg" alt=""/>
               <div class="item-content">
@@ -111,6 +118,7 @@
                  推荐歌单推荐歌单推荐歌单
               </div>
           </li>
+           -->
         </ul>
       </div>
     </div>
@@ -124,13 +132,18 @@ Vue.component('my-swiper', mySwiper);
 export default {
   data:function(){
     return{
-      swiperList:[]
+      swiperList:[],
+      recomendList:[]
     }
   },
   mounted:function(){
     axios.get("static/data/swiper.json").then(response=>{
       console.log(response);
       this.swiperList=response.data;
+    });
+    axios.get("static/data/recomendList.json").then(response=>{
+      console.log(response);
+      this.recomendList=response.data;
     })
      /*  this.swiperList=[
       {imgHref:"#",imgUrl:"static/img/1.png"},
@@ -138,6 +151,12 @@ export default {
       {imgHref:"#",imgUrl:"static/img/3.png"},
       {imgHref:"#",imgUrl:"static/img/4.png"},
       ]; */
+  },
+  methods:{
+    jumpToMusicList:function(listId){
+      console.log(listId);
+      this.$router.push("/musiclist")
+    }
   }
 
 };

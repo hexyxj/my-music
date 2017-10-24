@@ -1,6 +1,6 @@
 <template>
     <div class="player">
-        <audio src="../assets/media/beautifulinwhite.mp3" autoplay id="musictrl"></audio>
+        <audio src="http://fs.w.kugou.com/201710240921/f053507dc50dce1e76d2cd7867a1e505/G107/M09/01/15/S5QEAFnbnjWAM8fQAEPd1VgZ8Bo529.mp3" autoplay id="musictrl" preload="auto"></audio>
         <div class="progress-bar">
             <div class="current-time" :style="{width:currentWidth}"></div>
         </div>
@@ -9,8 +9,8 @@
                 <img src="../assets/img/music_avatar.jpg" alt="">
             </div>
             <div class="song-descr">
-                <p class="song-name">Beautiful In White</p>
-                <p class="singer">westlife</p>
+                <p class="song-name">祝你幸福</p>
+                <p class="singer">李荣浩 - 祝你幸福</p>
             </div>
             <div class="song-ctrl ctrl-play" @click="playOrPause">
                 <!-- <img src="../assets/img/button/start.png" alt="" class="song-pause" > -->
