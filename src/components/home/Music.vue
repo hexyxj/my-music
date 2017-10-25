@@ -137,6 +137,7 @@ export default {
     }
   },
   mounted:function(){
+    this.$emit("whoIsActive","music");
     axios.get("static/data/swiper.json").then(response=>{
       // console.log(response);
       this.swiperList=response.data;

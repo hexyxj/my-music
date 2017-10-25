@@ -5,9 +5,11 @@
   </div>
 </template>
 <script>
-    export default{
-
-    }
+export default {
+  mounted: function() {
+    this.$emit("whoIsActive", "bs");
+  }
+};
 </script>
 <style>
 

@@ -41,6 +41,12 @@ export default {
   updated:function(){
     this.music=this.message;
     // console.log(this.message);
+    var songCtrl = document.getElementById("musictrl");
+    if(songCtrl){
+      songCtrl.oncanplay = () => {
+        this.startProgressBar();
+      };
+    }
   },
   watch:{ 
     music:function(){

@@ -12,32 +12,34 @@
   </div>
 </template>
 <script>
-    export default{
-
-    }
+export default {
+  mounted: function() {
+    this.$emit("whoIsActive", "video");
+  }
+};
 </script>
 <style scoped lang="less">
 @import "../../assets/css/variable.less";
 
-.xs{
-    font-size: @fontSizeXS;
+.xs {
+  font-size: @fontSizeXS;
 }
-.s{
-    font-size: @fontSizeS;
+.s {
+  font-size: @fontSizeS;
 }
-.m{
-    font-size: @fontSizeM;
+.m {
+  font-size: @fontSizeM;
 }
-.l{
-    font-size: @fontSizeL;
+.l {
+  font-size: @fontSizeL;
 }
-.xl{
-    font-size: @fontSizeXL;
+.xl {
+  font-size: @fontSizeXL;
 }
-.xxl{
-    font-size: @fontSizeXXL;
+.xxl {
+  font-size: @fontSizeXXL;
 }
-.xxxl{
-    font-size: @fontSizeXXXL;
+.xxxl {
+  font-size: @fontSizeXXXL;
 }
 </style>

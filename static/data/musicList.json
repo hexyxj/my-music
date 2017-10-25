@@ -1,11 +1,12 @@
 {
-    "musicListName":"雨声集|你的快乐来自每场雨",
-    "author":"不在扎马尾",
-    "musicListImg":"http://imge.kugou.com/stdmusic/20171010/20171010000635443075.jpg",
+  "id":1,
+  "musicListName": "雨声集|你的快乐来自每场雨",
+  "author": "不在扎马尾",
+  "musicListImg": "http://imge.kugou.com/stdmusic/20171010/20171010000635443075.jpg",
   "collect": 1234567,
-  "share":505678,
-  "message":874512,
-  "download":815642,
+  "share": 505678,
+  "message": 874512,
+  "download": 815642,
   "dataList": [{
     "id": 1,
     "name": "祝你幸福",
@@ -74,6 +75,30 @@
     "songUrl": "http://fs.w.kugou.com/201710241852/bfd139a856179d13d754e4d51fbda6a7/G113/M05/18/13/UZQEAFnomGmAf9vQAEWDJPguFqE992.mp3"
   }, {
     "id": 12,
+    "name": "醉赤壁",
+    "songer": "林俊杰 - JJ陆",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20150718/20150718065653668323.jpg",
+    "songUrl": "http://fs.w.kugou.com/201710241904/94d29eae03337fae23b9021dd1cf0c8b/G007/M03/1C/0F/p4YBAFS3VoqAaluzAETEwUtAT7w193.mp3"
+  }, {
+    "id": 13,
+    "name": "祝你幸福",
+    "songer": "李荣浩 - 祝你幸福",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20171010/20171010000635443075.jpg",
+    "songUrl": "http://fs.w.kugou.com/201710240921/f053507dc50dce1e76d2cd7867a1e505/G107/M09/01/15/S5QEAFnbnjWAM8fQAEPd1VgZ8Bo529.mp3"
+  }, {
+    "id": 14,
+    "name": "老街",
+    "songer": "李荣浩 - 小黄",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20150718/20150718081938784291.jpg",
+    "songUrl": "http://fs.w.kugou.com/201710241838/56f1007b6a3e6771479eddbd49fa36c8/G009/M08/10/0D/qYYBAFUJEWKAWpnwAE4Sic17X2Y833.mp3"
+  }, {
+    "id": 15,
+    "name": "回旋木马的孤单",
+    "songer": "戚薇 - 回旋木马的孤单",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20171019/20171019202359976841.jpg",
+    "songUrl": "http://fs.w.kugou.com/201710241852/bfd139a856179d13d754e4d51fbda6a7/G113/M05/18/13/UZQEAFnomGmAf9vQAEWDJPguFqE992.mp3"
+  }, {
+    "id": 16,
     "name": "醉赤壁",
     "songer": "林俊杰 - JJ陆",
     "imgUrl": "http://imge.kugou.com/stdmusic/20150718/20150718065653668323.jpg",

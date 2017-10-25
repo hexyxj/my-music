@@ -1,36 +1,53 @@
 <template>
   <div class="home">
-    <div class="banner" @click="menuChange">
+    <div class="banner" >
       <div class="flex-box">
-          <router-link to="/music" class="menu-btn">音乐</router-link>
+          <router-link to="/music" :class="{active:musicActive,'menu-btn':true}"  @click.native="menuChange('music')">音乐</router-link>
       </div>
       <div class="flex-box">
-          <router-link to="/video" class="menu-btn">视频</router-link>
+          <router-link to="/video" :class="{active:videoActive,'menu-btn':true}" @click.native="menuChange('video')">视频</router-link>
       </div>
       <div class="flex-box">
-          <router-link to="/bs" class="menu-btn">主播电台</router-link>
+          <router-link to="/bs" :class="{active:bsActive,'menu-btn':true}" @click.native="menuChange('bs')">主播电台</router-link>
       </div>
-     <!--  <div class="flex-box">
-          <router-link to="/rank" class="menu-btn">排行榜</router-link>
-      </div> -->
     </div>
-    <router-view></router-view>
+    <router-view  @whoIsActive="checkMenu"></router-view>
   </div>
 </template>
 
 <script>
 export default {
+  data:function(){
+    return {
+      musicActive:true,
+      videoActive:false,
+      bsActive:false
+    }
+  },
   mounted: function() {
-    document.querySelector(".banner .menu-btn").classList.add("active");
+    
   },
   methods: {
-    menuChange(el) {
-      console.log(el.target);
-      var historyActive = document.querySelector(".banner .active");
-      if (historyActive) {
-        historyActive.classList.remove("active");
+    checkMenu(msg){
+      // console.log(msg);
+      this.menuChange(msg);
+    },
+    menuChange(str) {
+      if(str=="music"){
+        this.musicActive=true;
+        this.videoActive=false;
+        this.bsActive=false;
       }
-      el.target.classList.add("active");
+      if(str=="video"){
+        this.musicActive=false;
+        this.videoActive=true;
+        this.bsActive=false;
+      }
+      if(str=="bs"){
+        this.musicActive=false;
+        this.videoActive=false;
+        this.bsActive=true;
+      }
     }
   }
 };
