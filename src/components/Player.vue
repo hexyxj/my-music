@@ -1,6 +1,18 @@
 <template>
     <div class="player" v-if="message && music">
-        <audio :src="music.songUrl" autoplay id="musictrl" preload="auto"></audio>
+      <ul class="current-list" v-if="isVisibility && currentList">
+        <li v-for="(tmp,index) in currentList" :key="index" @click="palyMusic(tmp,index)">
+            <div class="number">{{index+1}}</div>
+            <div class="songdetail">
+                <p class="songname">{{tmp.name}}</p>
+                <p class="singer">{{tmp.songer}}</p>
+            </div>
+            <div class="moremenu" @click="deleteSong($event,index)">
+               <i class="fa fa-close"></i>
+            </div>
+        </li>
+      </ul>
+        <audio :src="music.songUrl" id="musictrl" preload="auto"></audio>
         <div class="progress-bar">
             <div class="current-time" :style="{width:currentWidth}"></div>
         </div>
@@ -15,49 +27,67 @@
             <div class="song-ctrl ctrl-play" @click="playOrPause">
                 <!-- <img src="../assets/img/button/start.png" alt="" class="song-pause" > -->
             </div>
+            <div class="player-menu">
+              <img src="../assets/img/button/morew.png" alt="" @click="showPlayList">
+            </div>
         </div>
         
     </div>
 </template>
 <script>
-import Image from "../assets/img/button/start.png";
+// import Image from "../assets/img/button/start.png";
 export default {
-  props:["message"],
+  props: ["message","clIsActive"],
   data: function() {
     return {
       currentWidth: "2px",
-      music:null
+      music: null,
+      isVisibility: false,
+      currentList: null,
+      myIndex:null
     };
   },
   mounted: function() {
-    
     var songCtrl = document.getElementById("musictrl");
-    if(songCtrl){
+    if (songCtrl) {
       songCtrl.oncanplay = () => {
+        songCtrl.play();
         this.startProgressBar();
       };
     }
   },
-  updated:function(){
-    this.music=this.message;
-    // console.log(this.message);
+  updated: function() {
+    // this.music = this.message;
+    // console.log(this.message); 
     var songCtrl = document.getElementById("musictrl");
-    if(songCtrl){
-      songCtrl.oncanplay = () => {
-        this.startProgressBar();
-      };
-    }
+      if (songCtrl) {
+        songCtrl.play();
+        songCtrl.oncanplay = () => {
+          this.startProgressBar();
+        };
+      }
   },
-  watch:{ 
-    music:function(){
+  watch: {
+    message:function(){
+      this.music = this.message;
+      this.isVisibility=this.clIsActive;
+      var list = localStorage.getItem("currentList");
+      var listObj = JSON.parse(list) || [];
+      listObj.push(this.music);
+      this.myIndex=listObj.length-1;
+      // console.log(this.myIndex);
+      // console.log(tmp);
+      localStorage.setItem("currentList",JSON.stringify(listObj));
+      // console.log(listObj);
+    },
+    music: function() {
       // console.log(this.music);
     }
-
   },
   methods: {
     playOrPause(el) {
       var songCtrl = document.getElementById("musictrl");
-      if(!songCtrl){
+      if (!songCtrl) {
         return;
       }
       if (songCtrl.paused) {
@@ -82,6 +112,23 @@ export default {
           clearInterval(timer);
         }
       }, 500);
+    },
+    showPlayList() {
+      var list = localStorage.getItem("currentList");
+      if (list) {
+        this.currentList = JSON.parse(list);
+      }
+      this.isVisibility = !this.isVisibility;
+    },
+    deleteSong(event,index) {
+      event.stopPropagation();
+      this.currentList.splice(index, 1);
+      localStorage.setItem("currentList", JSON.stringify(this.currentList));
+    },
+    palyMusic(tmp,index) {
+      this.music = tmp;
+      this.myIndex=index;
+      // console.log(this.myIndex);
     }
   }
 };
@@ -103,10 +150,10 @@ export default {
   }
 }
 .ctrl-play {
-  background: url(../assets/img/button/start.png) no-repeat center;
+  background: url(../assets/img/button/start36px.png) no-repeat center;
 }
 .ctrl-pause {
-  background: url(../assets/img/button/pause.png) no-repeat center;
+  background: url(../assets/img/button/pause36px.png) no-repeat center;
 }
 .player-cover {
   background-color: #fff;
@@ -121,18 +168,18 @@ export default {
     min-width: 60px;
     img {
       vertical-align: middle;
-      width: 120px;
-      height: 120px;
-    //   position: absolute;
-    //   top: 50%;
-    //   margin-top: -30px;
+      width: 80px;
+      height: 80px;
+      //   position: absolute;
+      //   top: 50%;
+      //   margin-top: -30px;
     }
   }
   .song-descr {
     flex: 1;
     padding-left: 10px;
     padding-left: 10px;
-    font-size: @fontSizeL;
+    font-size: @fontSizeS;
     > p {
       white-space: nowrap;
       overflow: hidden;
@@ -145,6 +192,56 @@ export default {
   }
   .song-ctrl {
     min-width: 96px;
+  }
+  .player-menu {
+    min-width: 48px;
+    position: relative;
+    img {
+      width: 48px;
+      position: absolute;
+      top: 50%;
+      margin-top: -24px;
+    }
+  }
+}
+.current-list {
+  width: 98%;
+  margin: 0 auto 10px;
+  height: 400px;
+  overflow-y: scroll ;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 30px #000;
+  background: #fff;
+  li {
+    height: 80px;
+    display: flex;
+  }
+  .number {
+    width: 60px;
+    line-height: 80px;
+    text-align: center;
+  }
+  .songdetail {
+    flex: 1;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: @fontSizeS;
+    .singer {
+      font-size: @fontSizeXS;
+      color: #76797c;
+    }
+  }
+  .moremenu {
+    padding-right: 20px;
+    color: #76797c;
+    width: 50px;
+    line-height: 80px;
+    text-align: center;
+    // border-bottom: 1px solid #ddd;
   }
 }
 </style>

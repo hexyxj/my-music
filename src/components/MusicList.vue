@@ -59,51 +59,54 @@
             </div>
         </li>
     </ul>
-    <my-player :message="playSong"></my-player>
+    <my-player :message="playSong" :clIsActive="isActive"></my-player>
 </div>
 </template>
 <script>
-import axios from 'axios'
+import axios from "axios";
 export default {
-  data:function(){
+  data: function() {
     return {
-      musicList:[],
-      share:0,
-      collect:0,
-      message:0,
-      download:0,
-      musicListName:"",
-      author:"",
-      musicListImg:"",
-      playSong:null
-    }
+      musicList: [],
+      share: 0,
+      collect: 0,
+      message: 0,
+      download: 0,
+      musicListName: "",
+      author: "",
+      musicListImg: "",
+      playSong: null,
+      isActive:true
+    };
   },
-  mounted:function(){
-    console.log("musicList")
-    axios.get("static/data/musicList.json").then(response=>{
-      this.musicList=response.data.dataList;
-      this.share=response.data.share;
-      this.collect=response.data.collect;
-      this.message=response.data.message;
-      this.download=response.data.download;
-      this.musicListName=response.data.musicListName;
-      this.author=response.data.author;
-      this.musicListImg=response.data.musicListImg
-    })
+  mounted: function() {
+    console.log("musicList");
+    axios.get("static/data/musicList.json").then(response => {
+      this.musicList = response.data.dataList;
+      this.share = response.data.share;
+      this.collect = response.data.collect;
+      this.message = response.data.message;
+      this.download = response.data.download;
+      this.musicListName = response.data.musicListName;
+      this.author = response.data.author;
+      this.musicListImg = response.data.musicListImg;
+    });
   },
   methods: {
-    goBack:function() {
+    goBack: function() {
       history.go(-1);
     },
-    playMusic:function(tmp){
-      this.playSong=tmp;
+    playMusic: function(tmp) {
+ 
+      this.playSong = tmp;
+      this.isActive=false;
     }
   },
-  filters:{
-    TooBig:function(value){
-      if(value>100000){
-        return Math.round(value/10000)+"万";
-      }else{
+  filters: {
+    TooBig: function(value) {
+      if (value > 100000) {
+        return Math.round(value / 10000) + "万";
+      } else {
         return value;
       }
     }
@@ -119,7 +122,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
   height: 80px;
   line-height: 80px;
@@ -193,7 +196,7 @@ export default {
   }
 }
 .song-list {
-  padding-bottom: 160px;
+  padding-bottom: 120px;
   li {
     height: 100px;
     display: flex;
@@ -212,7 +215,7 @@ export default {
     justify-content: space-around;
     font-size: @fontSizeM;
     .singer {
-      font-size: 24px;
+      font-size: @fontSizeXS;
       color: #76797c;
     }
   }
