@@ -1,0 +1,18 @@
+language: node_js
+node_js: stable
+branches:
+  only:
+  - master
+install:
+  - npm install
+script:
+  - npm run build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $my_music
+  local_dir: dist
+  name: hexyxj
+  email: 356061044@qq.com
+  on:
+    branch: master
