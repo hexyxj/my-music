@@ -45,7 +45,8 @@ export default {
       isVisibility: false,
       currentList: null,
       myIndex:null,
-      isPlaying: true
+      isPlaying: true,
+      timer:null
     };
   },
   mounted: function() {
@@ -69,6 +70,9 @@ export default {
           this.startProgressBar();
         };
       }
+  },
+  destroyed:function(){
+    clearInterval(this.timer);
   },
   watch: {
     message:function(){
@@ -108,15 +112,16 @@ export default {
       var songCtrl = document.getElementById("musictrl");
       var that = this;
       var totalTime = songCtrl.duration;
-      var timer = setInterval(() => {
+      this.timer = setInterval(() => {
         var currentTime = songCtrl.currentTime;
 
         that.currentWidth = parseInt(currentTime / totalTime * 100) + "%";
         // console.log(that.currentWidth);
-        if (currentTime >= totalTime || songCtrl.paused) {
-          clearInterval(timer);
+        if (currentTime >= totalTime || songCtrl.paused || this.isPlaying == false) {
+          songCtrl.pause();
+          clearInterval(this.timer);
         }
-      }, 500);
+      }, 200);
     },
     showPlayList() {
       var list = localStorage.getItem("currentList");
