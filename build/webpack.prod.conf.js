@@ -9,7 +9,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
-const WebpackClearConsole = require("webpack-clear-console").WebpackClearConsole;
 
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -99,9 +98,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ]),
-    // WebpackClearConsole plugin removes all statements beginning with console.
-    new WebpackClearConsole()
+    ])
   ]
 })
 

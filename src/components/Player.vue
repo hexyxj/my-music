@@ -78,7 +78,6 @@ export default {
       var listObj = JSON.parse(list) || [];
       listObj.push(this.music);
       this.myIndex=listObj.length-1;
-      console.log(this.isPlaying)
       // console.log(this.myIndex);
       // console.log(tmp);
       localStorage.setItem("currentList",JSON.stringify(listObj));
