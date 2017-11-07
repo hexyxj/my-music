@@ -1,13 +1,13 @@
 <template>
   <div class="index">
       <div class="header">
-        <a href="#" class="left menu-btn"><i class="fa fa-navicon"></i></a>
+        <a href="#" class="left menu-btn"><icon name="navicon"></icon></a>
         <div class="middle">
-          <router-link to="/local" class="local-btn"><i class="fa fa-music"></i></router-link>
-          <router-link to="/home" class="home-btn"><i class="fa fa-home"></i></router-link>
-          <router-link to="/friendscircle" class="fc-btn"><i class="fa fa-user-o"></i></router-link>
+          <router-link to="/local" class="local-btn"><icon name="music"></icon></router-link>
+          <router-link to="/home" class="home-btn"><icon name="home"></icon></router-link>
+          <router-link to="/friendscircle" class="fc-btn"><icon name="user-o"></icon></router-link>
         </div>
-        <router-link to="/search" class="right search-btn"><i class="fa fa-search"></i></router-link>
+        <router-link to="/search" class="right search-btn"><icon name="search"></icon></router-link>
       </div>
       <router-view></router-view>
   </div>
@@ -22,12 +22,10 @@ export default {};
   display: flex;
   padding: 20px;
   background-color: @themeColor;
-  i {
-    font-size: @fontSizeL;
-    color: #fff;
-  }
+  color: @white;
   .left {
     flex: 1;
+    color: @white;
   }
   .middle {
     padding-left: 30px;
@@ -37,11 +35,13 @@ export default {};
     text-align: center;
   }
   .middle > a {
+    color: @white;
     flex: 1;
   }
   .right {
     flex: 1;
     text-align: right;
+    color: @white;
   }
 }
 </style>

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import VueResource from 'vue-resource'
+// import VueResource from 'vue-resource'
 import Header from '@/components/Header'
 import Home from '@/components/Header/Home'
 import FriendscCircle from '@/components/Header/FriendsCircle'
@@ -16,7 +16,7 @@ import Player from '@/components/Player'
 import Swiper from '@/components/Swiper'
 
 Vue.use(Router)
-Vue.use(VueResource)
+// Vue.use(VueResource)
 export default new Router({
   routes: [
     {

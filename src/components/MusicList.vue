@@ -2,15 +2,15 @@
 <div class="music-list">
     <div class="navbar clearfix">
         <div class="navbar-item-left goback" @click="goBack">
-            <i class="fa fa-angle-left"></i>
+            <icon name="angle-left"></icon>
         </div>
         <div class="navbar-item-left title">歌单</div>
         <div class="navbar-item-right list-menu">
-            <!-- <i class="fa fa-ellipsis-v"></i> -->
-            <i class="fa fa-reorder"></i>
+            <!-- <icon name="ellipsis-v"></icon> -->
+            <icon name="reorder"></icon>
         </div>
         <router-link class="navbar-item-right search " to="/search">
-           <i class="fa fa-search"></i>
+           <icon name="search"></icon>
         </router-link>
     </div>
     <div class="content">
@@ -25,26 +25,26 @@
         </div>
         <div class="handle">
             <div class="handle-item">
-                <i class="fa fa-folder-o"></i>
+                <icon name="folder-o"></icon>
                 <p>{{collect|TooBig}}</p>
             </div>
             <div class="handle-item">
-                <i class="fa fa-commenting-o"></i>
+                <icon name="commenting-o"></icon>
                 <p>{{message|TooBig}}</p>
             </div>
             <div class="handle-item">
-                <i class="fa fa-share-alt" aria-hidden="true"></i>
+                <icon name="share-alt" aria-hidden="true"></icon>
                 <p>{{share|TooBig}}</p>
             </div>
             <div class="handle-item">
-                <i class="fa fa-download" aria-hidden="true"></i>
+                <icon name="download" aria-hidden="true"></icon>
                 <p>{{download|TooBig}}</p>
             </div>
         </div>
     </div>
     <div class="song-title">
         <div class="icon">
-            <i class="fa fa-play-circle-o"></i><span>播放全部<small>{{'(共'+musicList.length+'首)'}}</small></span>
+            <icon name="play-circle-o"></icon><span>播放全部<small>{{'(共'+musicList.length+'首)'}}</small></span>
         </div>
     </div>
     <ul class="song-list">
@@ -55,7 +55,7 @@
                 <p class="singer">{{tmp.songer}}</p>
             </div>
             <div class="moremenu">
-               <i class="fa fa-ellipsis-v"></i>
+               <icon name="ellipsis-v"></icon>
             </div>
         </li>
     </ul>

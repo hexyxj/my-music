@@ -28,32 +28,32 @@
       <div class="cards">
         <div class="card-item">
           <div class="card-btn">
-            <i class="fa fa-address-card"></i>
+            <icon name="address-card"></icon>
           </div>
           <p class="card-title">私人FM</p>
         </div>
         <div class="card-item">
           <div class="card-btn">
-            <i class="fa fa-calendar-check-o"></i>
+            <icon name="calendar-check-o"></icon>
           </div>
           <p class="card-title">每日推荐</p>
         </div>
         <div class="card-item">
           <div class="card-btn">
-            <i class="fa fa-server"></i>
+            <icon name="server"></icon>
           </div>
           <p class="card-title">歌单</p>
         </div>
         <div class="card-item">
           <div class="card-btn">
-            <i class="fa fa-bar-chart-o"></i>
+            <icon name="bar-chart-o"></icon>
           </div>
           <p class="card-title">排行榜</p>
         </div>
       </div>
       <div class="music-list">
         <div class="list-header">
-          <i class="fa fa-calendar"></i>
+          <icon name="calendar"></icon>
           <span>推荐歌单</span>
         </div>
         <ul class="list-ul">
@@ -63,62 +63,6 @@
                 {{tmp.descr}}
               </div>
           </li>
-          <!-- 
-            <li>
-            <img src="../../assets/img/recomend/1.jpg" alt=""/>
-              <div class="item-content">
-                 推荐歌单推荐歌单推荐歌单
-              </div>
-          </li> 
-          <li>
-            <img src="../../assets/img/recomend/2.jpg" alt=""/>
-              <div class="item-content">
-                 推荐歌单推荐歌单推荐歌单
-              </div>
-          </li>
-          <li>
-            <img src="../../assets/img/recomend/3.jpg" alt=""/>
-              <div class="item-content">
-                 推荐歌单推荐歌单推荐歌单
-              </div>
-          </li>
-          <li>
-            <img src="../../assets/img/recomend/4.jpg" alt=""/>
-              <div class="item-content">
-                 推荐歌单推荐歌单推荐歌单
-              </div>
-          </li>
-          <li>
-            <img src="../../assets/img/recomend/5.jpg" alt=""/>
-              <div class="item-content">
-                 推荐歌单推荐歌单推荐歌单
-              </div>
-          </li>
-          <li>
-            <img src="../../assets/img/recomend/6.jpg" alt=""/>
-              <div class="item-content">
-                 推荐歌单推荐歌单推荐歌单
-              </div>
-          </li>
-          <li>
-            <img src="../../assets/img/recomend/7.jpg" alt=""/>
-              <div class="item-content">
-                 推荐歌单推荐歌单推荐歌单
-              </div>
-          </li>
-          <li>
-            <img src="../../assets/img/recomend/8.jpg" alt=""/>
-              <div class="item-content">
-                 推荐歌单推荐歌单推荐歌单
-              </div>
-          </li>
-          <li>
-            <img src="../../assets/img/recomend/9.jpg" alt=""/>
-              <div class="item-content">
-                 推荐歌单推荐歌单推荐歌单
-              </div>
-          </li>
-           -->
         </ul>
       </div>
     </div>
@@ -236,14 +180,7 @@ img {
   border: 2px solid @themeColor;
   padding: 5px;
   font-size: @fontSizeM;
-  i {
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    line-height: 40px;
-    text-align: center;
-    color: @themeColor;
-  }
+  color: @themeColor;
 }
 
 .card-title {

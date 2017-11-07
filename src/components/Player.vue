@@ -8,7 +8,7 @@
                 <p class="singer">{{tmp.songer}}</p>
             </div>
             <div class="moremenu" @click="deleteSong($event,index)">
-               <i class="fa fa-close"></i>
+               <icon name="close"></icon>
             </div>
         </li>
       </ul>
@@ -24,11 +24,11 @@
                 <p class="song-name">{{music.name}}</p>
                 <p class="singer">{{music.songer}}</p>
             </div>
-            <div class="song-ctrl ctrl-play" @click="playOrPause">
-                <!-- <img src="../assets/img/button/start.png" alt="" class="song-pause" > -->
+            <div class="song-ctrl" @click="playOrPause">
+              <icon scale='1.5' :name="isPlaying ? 'pause-circle-o' : 'play-circle-o'"></icon>
             </div>
-            <div class="player-menu">
-              <img src="../assets/img/button/morew.png" alt="" @click="showPlayList">
+            <div class="player-menu" @click="showPlayList">
+              <icon name="ellipsis-v" scale="1.5" ></icon>
             </div>
         </div>
         
@@ -44,7 +44,8 @@ export default {
       music: null,
       isVisibility: false,
       currentList: null,
-      myIndex:null
+      myIndex:null,
+      isPlaying: true
     };
   },
   mounted: function() {
@@ -52,6 +53,7 @@ export default {
     if (songCtrl) {
       songCtrl.oncanplay = () => {
         songCtrl.play();
+        // this.isPlaying = true;
         this.startProgressBar();
       };
     }
@@ -62,6 +64,7 @@ export default {
     var songCtrl = document.getElementById("musictrl");
       if (songCtrl) {
         songCtrl.play();
+        // this.isPlaying = true;
         songCtrl.oncanplay = () => {
           this.startProgressBar();
         };
@@ -75,6 +78,7 @@ export default {
       var listObj = JSON.parse(list) || [];
       listObj.push(this.music);
       this.myIndex=listObj.length-1;
+      console.log(this.isPlaying)
       // console.log(this.myIndex);
       // console.log(tmp);
       localStorage.setItem("currentList",JSON.stringify(listObj));
@@ -92,11 +96,13 @@ export default {
       }
       if (songCtrl.paused) {
         songCtrl.play();
-        el.target.classList = "song-ctrl ctrl-play";
+        // el.target.classList = "song-ctrl ctrl-play";
+        this.isPlaying = true;
         this.startProgressBar();
       } else {
         songCtrl.pause();
-        el.target.classList = "song-ctrl ctrl-pause";
+        // el.target.classList = "song-ctrl ctrl-pause";
+        this.isPlaying = false;
       }
     },
     startProgressBar() {
@@ -149,12 +155,12 @@ export default {
     height: 2px;
   }
 }
-.ctrl-play {
-  background: url(../assets/img/button/start36px.png) no-repeat center;
-}
-.ctrl-pause {
-  background: url(../assets/img/button/pause36px.png) no-repeat center;
-}
+// .ctrl-play {
+//   background: url(../assets/img/button/start36px.png) no-repeat center;
+// }
+// .ctrl-pause {
+//   background: url(../assets/img/button/pause36px.png) no-repeat center;
+// }
 .player-cover {
   background-color: #fff;
   display: flex;
@@ -191,10 +197,15 @@ export default {
     }
   }
   .song-ctrl {
-    min-width: 96px;
+    min-width: 60px;
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
   }
   .player-menu {
-    min-width: 48px;
+    display: flex;
+    align-items: center;
+    min-width: 50px;
     position: relative;
     img {
       width: 48px;
