@@ -1,0 +1,108 @@
+{
+  "id":1,
+  "musicListName": "雨声集|你的快乐来自每场雨",
+  "author": "不在扎马尾",
+  "musicListImg": "http://imge.kugou.com/stdmusic/20171010/20171010000635443075.jpg",
+  "collect": 1234567,
+  "share": 505678,
+  "message": 874512,
+  "download": 815642,
+  "dataList": [{
+    "id": 1,
+    "name": "祝你幸福",
+    "songer": "李荣浩 - 祝你幸福",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20171010/20171010000635443075.jpg",
+    "songUrl": "http://7xjp74.com1.z0.glb.clouddn.com/%E4%B8%93%E5%B1%9E%E5%91%B3%E9%81%93.mp3"
+  }, {
+    "id": 2,
+    "name": "老街",
+    "songer": "李荣浩 - 小黄",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20150718/20150718081938784291.jpg",
+    "songUrl": "http://7xjp74.com1.z0.glb.clouddn.com/%E4%B8%93%E5%B1%9E%E5%91%B3%E9%81%93.mp3"
+  }, {
+    "id": 3,
+    "name": "回旋木马的孤单",
+    "songer": "戚薇 - 回旋木马的孤单",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20171019/20171019202359976841.jpg",
+    "songUrl": "http://7xjp74.com1.z0.glb.clouddn.com/%E4%B8%93%E5%B1%9E%E5%91%B3%E9%81%93.mp3"
+  }, {
+    "id": 4,
+    "name": "醉赤壁",
+    "songer": "林俊杰 - JJ陆",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20150718/20150718065653668323.jpg",
+    "songUrl": "http://7xjp74.com1.z0.glb.clouddn.com/%E4%B8%93%E5%B1%9E%E5%91%B3%E9%81%93.mp3"
+  }, {
+    "id": 5,
+    "name": "祝你幸福",
+    "songer": "李荣浩 - 祝你幸福",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20171010/20171010000635443075.jpg",
+    "songUrl": "http://7xjp74.com1.z0.glb.clouddn.com/%E4%B8%93%E5%B1%9E%E5%91%B3%E9%81%93.mp3"
+  }, {
+    "id": 6,
+    "name": "老街",
+    "songer": "李荣浩 - 小黄",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20150718/20150718081938784291.jpg",
+    "songUrl": "http://7xjp74.com1.z0.glb.clouddn.com/%E4%B8%93%E5%B1%9E%E5%91%B3%E9%81%93.mp3"
+  }, {
+    "id": 7,
+    "name": "回旋木马的孤单",
+    "songer": "戚薇 - 回旋木马的孤单",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20171019/20171019202359976841.jpg",
+    "songUrl": "http://7xjp74.com1.z0.glb.clouddn.com/%E4%B8%93%E5%B1%9E%E5%91%B3%E9%81%93.mp3"
+  }, {
+    "id": 8,
+    "name": "醉赤壁",
+    "songer": "林俊杰 - JJ陆",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20150718/20150718065653668323.jpg",
+    "songUrl": "http://7xjp74.com1.z0.glb.clouddn.com/%E4%B8%93%E5%B1%9E%E5%91%B3%E9%81%93.mp3"
+  }, {
+    "id": 9,
+    "name": "祝你幸福",
+    "songer": "李荣浩 - 祝你幸福",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20171010/20171010000635443075.jpg",
+    "songUrl": "http://7xjp74.com1.z0.glb.clouddn.com/%E4%B8%93%E5%B1%9E%E5%91%B3%E9%81%93.mp3"
+  }, {
+    "id": 10,
+    "name": "老街",
+    "songer": "李荣浩 - 小黄",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20150718/20150718081938784291.jpg",
+    "songUrl": "http://7xjp74.com1.z0.glb.clouddn.com/%E4%B8%93%E5%B1%9E%E5%91%B3%E9%81%93.mp3"
+  }, {
+    "id": 11,
+    "name": "回旋木马的孤单",
+    "songer": "戚薇 - 回旋木马的孤单",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20171019/20171019202359976841.jpg",
+    "songUrl": "http://7xjp74.com1.z0.glb.clouddn.com/%E4%B8%93%E5%B1%9E%E5%91%B3%E9%81%93.mp3"
+  }, {
+    "id": 12,
+    "name": "醉赤壁",
+    "songer": "林俊杰 - JJ陆",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20150718/20150718065653668323.jpg",
+    "songUrl": "http://7xjp74.com1.z0.glb.clouddn.com/%E4%B8%93%E5%B1%9E%E5%91%B3%E9%81%93.mp3"
+  }, {
+    "id": 13,
+    "name": "祝你幸福",
+    "songer": "李荣浩 - 祝你幸福",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20171010/20171010000635443075.jpg",
+    "songUrl": "http://7xjp74.com1.z0.glb.clouddn.com/%E4%B8%93%E5%B1%9E%E5%91%B3%E9%81%93.mp3"
+  }, {
+    "id": 14,
+    "name": "老街",
+    "songer": "李荣浩 - 小黄",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20150718/20150718081938784291.jpg",
+    "songUrl": "http://7xjp74.com1.z0.glb.clouddn.com/%E4%B8%93%E5%B1%9E%E5%91%B3%E9%81%93.mp3"
+  }, {
+    "id": 15,
+    "name": "回旋木马的孤单",
+    "songer": "戚薇 - 回旋木马的孤单",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20171019/20171019202359976841.jpg",
+    "songUrl": "http://7xjp74.com1.z0.glb.clouddn.com/%E4%B8%93%E5%B1%9E%E5%91%B3%E9%81%93.mp3"
+  }, {
+    "id": 16,
+    "name": "醉赤壁",
+    "songer": "林俊杰 - JJ陆",
+    "imgUrl": "http://imge.kugou.com/stdmusic/20150718/20150718065653668323.jpg",
+    "songUrl": "http://7xjp74.com1.z0.glb.clouddn.com/%E4%B8%93%E5%B1%9E%E5%91%B3%E9%81%93.mp3"
+  }]
+
+}
